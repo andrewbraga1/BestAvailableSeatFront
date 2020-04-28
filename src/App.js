@@ -153,6 +153,7 @@ class App extends React.Component {
       
     }) 
     obj = Object.assign(obj,seats)
+    
     api.post('api/v1/track_best_seats',obj)
     .then(res => {
       console.log(res);
@@ -185,7 +186,7 @@ class App extends React.Component {
                   <div className="align">
                     <h3 >Suggestion</h3>{' '}
                     {this.state.suggestion.map( (item_suggestion,i)=>(
-                    <div className="suggestion">{item_suggestion}</div>
+                    <div key={i} className="suggestion">{item_suggestion}</div>
                     ))}
                   </div>
                 </div>
